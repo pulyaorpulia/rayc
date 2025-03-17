@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAY COCK</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="Billion Air Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#tokenomics">Tokenomics</a></li>
+                <li><a href="#how-to-buy">How to Buy</a></li>
+            </ul>
+            <div class="burger" onclick="toggleMenu()">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+        <div class="header-content">
+            <h1>RAY COCK</h1>
+            <div class="address-box">        <!--TODO:-->
+                <p><span id="contract">https://odin.fun/</span></p>
+                <button onclick="copyContract()">Press to Copy Link</button>
+            </div>
+        </div>
+
+        <footer>
+            <h3>Follow Us</h3>
+            <div class="social-links"> <!--TODO:-->
+                <a href="https://t.me/RAY_COCK" target="_blank"><img src="images/telegram-icon.png" alt="Telegram"></a>
+                <a href="https://x.com/RAYCOCK_OdinFun" target="_blank"><img src="images/x-icon.png" alt="X"></a>
+                <a href="https://odin.fun/" target="_blank"><img src="images/odin-logo.jpg" alt="ODIN"></a>
+            </div>
+        </footer>
+
+    </header>
+
+    <section id="about">
+        <div class="content-box">
+            <h2>About</h2>
+            <p>Join our heroic adventurer's crypto quest on Bitcoin. Leap through challenges, grab those gains, and let's make some noise in the meme coin world!</p>
+
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <div class="content-box">
+            <h2>Tokenomics</h2>
+            <p><strong>Total Supply:</strong> 21,000,000 BAIR</p>
+            <p><strong></strong></p>
+            <ul>
+                <li></li>
+            </ul>
+            <p><strong>Utility:</strong> BAIR coins are used for in-game purchases, betting, raffle entries, and governance within the BillionAir ecosystem. Holders also receive a share of platform revenue through staking mechanisms.</p>
+        </div>
+    </section>
+
+    <section id="how-to-buy">
+        <div class="content-box">
+            <h2>How to Buy BAIR</h2>
+            <p>Follow these simple steps to purchase BAIR coins:</p>
+            <ol>
+                <li><strong>Create a Wallet:</strong> Set up a compatible wallet.</li>
+                <li><strong>Add Funds:</strong> Deposit BTC to your Odin fun.</li>
+                <li><strong>Swap for BAIR:</strong> </li>
+            </ol>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Follow Us</h3>
+        <div class="social-links"> <!--TODO:-->
+            <a href="https://t.me/RAY_COCK" target="_blank"><img src="images/telegram-icon.png" alt="Telegram"></a>
+            <a href="https://x.com/RAYCOCK_OdinFun" target="_blank"><img src="images/x-icon.png" alt="X"></a>
+            <a href="https://odin.fun/" target="_blank"><img src="images/odin-logo.jpg" alt="ODIN"></a>
+        </div>
+    </footer>
+
+    <script>
+        function copyContract() {              <!--TODO:-->
+            navigator.clipboard.writeText("Soon");
+            alert("Copied!");
+        }
+
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
+        burger.addEventListener('click', () => {
+            navLinks.classList.toggle('nav-active');
+            burger.classList.toggle('toggle');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

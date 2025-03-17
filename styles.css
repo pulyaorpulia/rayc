@@ -1,0 +1,453 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background: url('images/header-bg.png') no-repeat center center;
+    background-size: contain; /* Rasm to‘liq ko‘rinadi, kesilmaydi */
+    background-attachment: fixed; /* Scroll qilganda fon ham harakatlanadi */
+    background-color: #ccce576f; /* Bo‘sh joylarni rang bilan to‘ldirish */
+    color: #b19d1e;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background: url('images/backgrund.png') no-repeat center bottom;
+    background-size: contain; /* Rasm to‘liq ko‘rinadi */
+    background-attachment: fixed; /* Scroll qilganda fon harakatlanadi */
+    padding: 40px 20px;
+    text-align: center;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 80px; /* Navbar fixed bo‘lgani uchun */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 90px;
+    background: linear-gradient(90deg, rgba(113, 70, 70, 0.9), rgba(20, 20, 20, 0.8));
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(195, 80, 80, 0.416);
+    transition: all 0.3s ease;
+}
+
+/* Logo stil */
+.logo img {
+    width: 60px;
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Nav-links stil */
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #00ffcc;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger menyu (kichik ekranlar uchun) */
+.burger {
+    display: none; /* Katta ekranlarda yashirish */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 30px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
+/* Kichik ekranlar uchun stil */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px; /* Paddingni kamaytirish */
+    }
+
+    .burger {
+        display: flex; /* Hamburger menyuni ko'rsatish */
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px; /* Navbar pastida joylash */
+        right: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(20, 20, 20, 0.9);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+    }
+
+    .nav-links.active {
+        height: 300px; /* Menyu ochilganda balandlik */
+    }
+
+    .nav-links li {
+        margin: 20px 0; /* Linklar orasidagi masofa */
+    }
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    margin-top: 40px;
+}
+
+.header-content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.address-box {
+    background: rgba(176, 142, 31, 0.7);
+    padding: 15px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.address-box p {
+    font-size: 18px;
+    margin: 0;
+    color: #fff;
+}
+
+.address-box button {
+    padding: 8px 16px;
+    background: #00ffcc;
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.address-box button:hover {
+    background: #00cc99;
+}
+
+.content-box {
+    background: rgba(62, 48, 37, 0.756);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #00ffcc;
+}
+
+section p, section ul, section ol {
+    font-size: 22px;
+    color: #98952a;
+}
+
+section ul, section ol {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+footer {
+    background: url('images/backqground.png') no-repeat center center; /* Rasm manzili */
+    background-size: cover; /* Rasmni to'liq qoplash */
+    background-position: center bottom; /* Rasmni pastki qismda joylash */
+    padding: 40px 20px; /* Ichki chegaralar */
+    text-align: center; /* Matnni markazga joylash */
+    color: white; /* Matn rangi */
+    position: relative; /* Relative pozitsiya */
+    z-index: 1; /* Elementlarni ustma-ust joylashishda ustunlik */
+    overflow: hidden; /* Blur effekti uchun */
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; /* Fon rasmni olish */
+    filter: blur(8px); /* Blur effekti */
+    z-index: -1; /* Kontentni blur ostida qoldirish */
+}
+
+footer h3 {
+    margin-bottom: 20px; /* Sarlavha ostidagi bo'sh joy */
+    font-size: 24px; /* Sarlavha o'lchami */
+}
+
+.social-links {
+    display: flex; /* Social linklarni yonma-yon joylash */
+    justify-content: center; /* Markazga joylash */
+    gap: 40px; /* Linklar orasidagi masofa */
+}
+
+.social-links img {
+    width: 50px; /* Iconlarning o'lchami */
+    height: 50px;
+    transition: transform 0.3s ease; /* Hover animatsiyasi */
+}
+
+.social-links img:hover {
+    transform: scale(1.2); /* Hover paytida kattalashtirish */
+}
+
+.social-links a[href*="odin.fun"] img {
+    width: auto; /* Odin logosi asl o‘lchamida bo‘lishi uchun */
+    height: 50px; /* Balandligini umumiy icon balandligiga moslashtirish */
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.95);
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 80px;
+        z-index: 999;
+    }
+
+    .nav-links.nav-active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .burger.toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.toggle .line2 {
+        opacity: 0;
+    }
+
+    .burger.toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .header-content h1 {
+        font-size: 36px;
+    }
+
+    .address-box p {
+        font-size: 16px;
+    }
+
+    .content-box {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 28px;
+    }
+
+    header {
+        min-height: 500px;
+        background-size: contain;
+    }
+
+    body {
+        background-size: contain;
+    }
+
+    .social-links {
+        gap: 20px; /* Kichik ekranlarda linklar orasidagi masofani kamaytirish */
+        flex-wrap: wrap; /* Linklarni qatorga sig'masa, yangi qatorga tushirish */
+    }
+
+    .social-links img {
+        width: 30px; /* Kichik ekranlarda iconlarning o'lchamini kamaytirish */
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .nav-links a {
+        font-size: 20px;
+    }
+
+    .header-content h1 {
+        font-size: 28px;
+    }
+
+    .address-box p {
+        font-size: 14px;
+    }
+
+    .content-box {
+        padding: 10px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    section p, section ul, section ol {
+        font-size: 16px;
+    }
+
+    header {
+        min-height: 400px;
+        background-size: contain;
+    }
+
+    body {
+        background-size: contain;
+    }
+
+    .social-links {
+        gap: 20px; /* Kichik ekranlarda linklar orasidagi masofani kamaytirish */
+        flex-wrap: wrap; /* Linklarni qatorga sig'masa, yangi qatorga tushirish */
+    }
+
+    .social-links img {
+        width: 30px; /* Kichik ekranlarda iconlarning o'lchamini kamaytirish */
+        height: 30px;
+    }
+}
+
+
+/* Nav-links stil (kichik ekranlar uchun) */
+@media only screen and (max-width: 768px) {
+    .nav-links {
+        position: fixed; /* Ekranga yopishib qolish */
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100vh; /* Ekran balandligini to'liq egallash */
+        background: rgba(20, 20, 20, 0.95); /* Shaffof fon */
+        backdrop-filter: blur(10px); /* Fonni blur qilish */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition: height 0.3s ease;
+        transform: translateX(100%); /* Menyuni boshlang'ich holatda yashirish */
+    }
+
+    .nav-links.active {
+        transform: translateX(0); /* Menyuni ko'rsatish */
+    }
+
+    .nav-links li {
+        margin: 20px 0; /* Linklar orasidagi masofa */
+    }
+
+    /* "X" tugmasi (menyuni yopish uchun) */
+    .burger.active .line1 {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
